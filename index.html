@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ankur AI Assistant</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <div class="header-content">
+                <div class="header-left">
+                    <div class="bot-avatar">
+                        <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" preserveAspectRatio="xMidYMid meet">
+                            <radialGradient id="IconifyId17ecdb2904d178eab8896" cx="31.846" cy="116.717" r="62.338" gradientTransform="matrix(0 -1 1.0982 0 -96.336 148.563)" gradientUnits="userSpaceOnUse">
+                                <stop offset=".144" stop-color="#29b6f6"></stop>
+                                <stop offset=".945" stop-color="#0277bd"></stop>
+                            </radialGradient>
+                            <path d="M111.17 87.23c-1.61 1.17-13.65 3.19-6.15-1.04c4.93-2.78 7.47-12.01-3.68-14.8C89.93 68.56 77.74 88.46 76 92.63c-4.13 9.89-9.85 18.2-21.58 24.17c-10.49 5.35-20.28 5.85-32.53-.08c-9.98-4.83-13.16-13.96-11.79-25.88a68.795 68.795 0 0 1 .98-6.23c1.39-6.75 2.75-7.67.64-16.95l18.23-2.03l3.12-.35l25.61-2.86c0 6.72-.77 11.82-10.54 21.28c-3.88 3.76-10.54 6.96-11.9 11.89c-.45 1.65-.75 3.41.72 5.6c1.68 2.52 13.54 8.51 24.79-7.46c1.15-1.63 7.52-11.3 9.25-13.91c4.26-6.43 8.9-12.1 16-15.64c25-12.48 36.92 13.78 24.17 23.05z" fill="url(#IconifyId17ecdb2904d178eab8896)"></path>
+                            <path d="M63.98 68.72l-6.28-.11l-18.93-.33l-1.24-.03h-.18l-2.04-.04l-1.04-.01l-1.22-.02l-1.36-.03h-.49l-1.3-.03l-1.21-.02l-14.5-.26l-4.09-.07c1.22-6.53 4.09-9.41 7.27-11c2.73-1.37 5.69-1.79 8.01-2.75c.32-.12.62-.26.91-.42c.42-.22.81-.47 1.17-.76c.12-.1.24-.21.36-.33h.01c0-.01.01-.02.01-.02c1.04-1.02 1.7-2.49 1.77-4.77l11.74-.62c-.14 2.65.73 4.3 2.2 5.44c.07.06.14.11.21.16c.17.12.35.24.53.35c.45.26.93.5 1.45.72c.31.12.62.24.95.35c.27.1.55.19.84.27c.04.02.08.03.12.04c.15.05.3.09.45.14c.08.02.16.04.25.06c1.62.46 3.37.85 5.1 1.38c.25.08.52.17.81.27c.62.2 1.24.44 1.85.7c.21.1.4.18.57.26c.06.02.12.05.18.08c3.64 1.78 6.62 4.87 7.12 11.4z" fill="#039be5"></path>
+                            <path d="M33.68 52.13l1.22.08h1.62c9.01-.6 15.04-8.94 15.23-22.14c.19-13.13-7.9-19.75-16.23-19.87S18.9 16.45 18.71 29.58c-.2 13.22 6.42 21.86 14.97 22.55z" fill="#4fc3f7"></path>
+                            <path d="M46.04 22.63c-3.84 0-7.52-1.38-10.94-4.11c-3.87-3.09-6.95-3.74-8.84-3.74c-1.03 0-1.86.18-2.49.4c.38-3.46 2.4-6.75 5.31-8.54c2.31-1.43 4.89-2.15 7.68-2.15c2.19 0 4.02.47 4.92.87c3.22 1.44 5.28 2 7.34 2c1.34 0 2.72-.25 4.37-.79c-.36 1.47-1.36 2.8-2.7 3.5l-1.08.57l1.18.36c.61.18 1.27.27 1.95.27c4.05 0 8.14-3.21 9.79-4.68c.18 3.19-.29 13.06-12.46 15.57c-.79.17-2.26.47-4.03.47z" fill="#0f3b7c"></path>
+                        </svg>
+                    </div>
+                    <div class="header-info">
+                        <h1>Ankur</h1>
+                        <p>AI Assistant</p>
+                        <p>Powered by Gemini</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <div class="message bot">
+                Hi! I'm Ankur, your AI assistant. How can I help you today?
+            </div>
+        </div>
+        <div class="chat-input">
+            <div class="input-container">
+                <input type="text" id="user-input" placeholder="Type your message...">
+                <div class="input-actions">
+                    <button class="icon-button send-button" id="send-button">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

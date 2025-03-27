@@ -1,0 +1,229 @@
+// Variables
+$primary-color: #29b6f6;
+$secondary-color: #0277bd;
+$text-dark: #1f2937;
+$text-light: #6b7280;
+$bg-light: #f8fafc;
+$bg-lighter: #f0f2f5;
+$white: #fff;
+
+// Mixins
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin gradient-bg {
+    background: linear-gradient(135deg, $primary-color 0%, $secondary-color 100%);
+}
+
+@mixin card-shadow {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+@mixin transition {
+    transition: all 0.3s ease;
+}
+
+// Reset and Base Styles
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+body {
+    background-color: $bg-lighter;
+    height: 100vh;
+    @include flex-center;
+}
+
+// Chat Container
+.chat-container {
+    width: 90%;
+    max-width: 400px;
+    height: 85vh;
+    background-color: $white;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+// Header Styles
+.chat-header {
+    padding: 20px;
+    @include gradient-bg;
+    color: $white;
+
+    .header-content {
+        @include flex-between;
+    }
+
+    .header-left {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .bot-avatar {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background-color: $white;
+        padding: 6px;
+        @include flex-center;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        
+        svg {
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+        }
+    }
+
+    .header-info {
+        h1 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        p {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+    }
+}
+
+// Button Styles
+.icon-button {
+    background: none;
+    border: none;
+    color: $white;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    @include flex-center;
+    @include transition;
+
+    &:hover {
+        background-color: rgba($white, 0.1);
+    }
+
+    &.send-button {
+        color: $primary-color !important;
+    }
+}
+
+// Chat Messages
+.chat-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: $bg-light;
+}
+
+.message {
+    margin-bottom: 20px;
+    max-width: 85%;
+    padding: 12px 16px;
+    border-radius: 15px;
+    line-height: 1.4;
+    font-size: 0.95rem;
+
+    &.user {
+        background-color: $primary-color;
+        color: $white;
+        margin-left: auto;
+        border-bottom-right-radius: 5px;
+    }
+
+    &.bot {
+        background-color: $white;
+        margin-right: auto;
+        border-bottom-left-radius: 5px;
+        @include card-shadow;
+    }
+}
+
+// Chat Input
+.chat-input {
+    padding: 15px;
+    background-color: $white;
+    border-top: 1px solid #e5e7eb;
+
+    .input-container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background-color: $bg-light;
+        padding: 8px 15px;
+        border-radius: 25px;
+    }
+
+    #user-input {
+        flex: 1;
+        border: none;
+        background: none;
+        padding: 8px;
+        outline: none;
+        font-size: 0.95rem;
+    }
+
+    .input-actions {
+        display: flex;
+        gap: 8px;
+
+        .icon-button {
+            color: $text-light;
+        }
+    }
+}
+
+// Typing Indicator
+.typing-indicator {
+    display: flex;
+    gap: 5px;
+    padding: 12px 16px;
+    background-color: $white;
+    border-radius: 15px;
+    width: fit-content;
+    margin-bottom: 20px;
+    @include card-shadow;
+
+    span {
+        width: 6px;
+        height: 6px;
+        background-color: $primary-color;
+        border-radius: 50%;
+        animation: typing 1s infinite ease-in-out;
+        opacity: 0.6;
+
+        &:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        &:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+    }
+}
+
+@keyframes typing {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-4px);
+    }
+} 
