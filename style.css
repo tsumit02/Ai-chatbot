@@ -26,7 +26,7 @@ body {
 }
 
 .chat-header {
-    padding: 20px;
+    padding: 10px;
     background: linear-gradient(135deg, #7c3aed 0%, #3b82f6 100%);
     color: #fff;
 }
@@ -35,7 +35,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .chat-header .header-left {
@@ -51,13 +51,13 @@ body {
 }
 
 .chat-header .header-info h1 {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 600;
-    margin-bottom: 2px;
+    margin-bottom: 1px;
 }
 
 .chat-header .header-info p {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     opacity: 0.9;
 }
 
@@ -83,8 +83,13 @@ body {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
+#font{
+    font-size: 10px;
+}
 .icon-button.send-button {
     color: #7c3aed !important;
+    font-size:1.25rem;
+    padding: 10px;
 }
 
 .quick-actions {
@@ -250,5 +255,3 @@ body {
         transform: translateY(-4px);
     }
 }
-
-/*# sourceMappingURL=style.css.map */
